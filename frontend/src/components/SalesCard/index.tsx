@@ -1,4 +1,5 @@
 import NotificationButton from "../NotificationButton";
+import InputData from "./InputData";
 
 const SalesCard = () => {
   return (
@@ -6,10 +7,10 @@ const SalesCard = () => {
       <h2 className="dsmeta-sales-title">Vendas</h2>
       <div>
         <div className="dsmeta-form-control-container">
-          <input className="dsmeta-form-control" type="text" />
+          <InputData />
         </div>
         <div className="dsmeta-form-control-container">
-          <input className="dsmeta-form-control" type="text" />
+          <InputData />
         </div>
       </div>
 
