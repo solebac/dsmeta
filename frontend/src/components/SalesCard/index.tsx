@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
-import NotificationButton from "../NotificationButton";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import InputData from "./InputData";
-import axios from "axios";
 import http from "../../utils/http";
-import { ResetSale, Sale } from "../models/sale";
+import { Sale } from "../models/sale";
 import TrTable from "./TrTable";
-
-type Props = {};
 
 const SalesCard = () => {
   const max = new Date();
@@ -20,10 +16,13 @@ const SalesCard = () => {
   const [sales, setSales] = useState<Sale[]>([]);
 
   useEffect(() => {
-    http.get(`/sales`).then((response) => {
+    console.log(minDate.toDateString());
+    const dmin = minDate.toISOString().slice(0, 10);
+    const dmax = maxDate.toISOString().slice(0, 10);
+    http.get(`/sales?minDate=${dmin}&maxDate=${dmax}`).then((response) => {
       setSales(response.data.content);
     });
-  }, []);
+  }, [minDate, maxDate]);
 
   return (
     <div className="dsmeta-card">
