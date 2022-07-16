@@ -7,7 +7,7 @@ const Header = () => {
         <h1>DSMeta</h1>
         <p>
           Desenvolvido por
-          <a href="linkedin.com/in/flávio-rogério-722a56159">@FlavioRogerio</a>
+          <a href="linkedin.com/in/flávio-rogério-722a56159"> @FlavioRogerio</a>
         </p>
       </div>
     </header>
