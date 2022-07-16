@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import icon from "../../assets/img/notification-icon.svg";
 import http from "../../utils/http";
 
@@ -8,7 +9,7 @@ type Props = {
 const NotificationButton = ({ saleId }: Props) => {
   const handleClick = (id: number) => {
     http(`/sales/${id}/notification`).then((response) => {
-      console.log("Success");
+      toast.info("SMS enviado com sucesso...");
     });
   };
   return (
