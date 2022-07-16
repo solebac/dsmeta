@@ -16,7 +16,7 @@ const SalesCard = () => {
   const [sales, setSales] = useState<Sale[]>([]);
 
   useEffect(() => {
-    console.log(minDate.toDateString());
+    //console.log(minDate.toDateString());
     const dmin = minDate.toISOString().slice(0, 10);
     const dmax = maxDate.toISOString().slice(0, 10);
     http.get(`/sales?minDate=${dmin}&maxDate=${dmax}`).then((response) => {
